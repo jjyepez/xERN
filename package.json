@@ -1,0 +1,44 @@
+{
+  "name": "xern",
+  "version": "1.0.0",
+  "description": "Boilerplate for the xERN apps",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon index",
+    "webpack:dev": "webpack --watch client/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjyepez/xERN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjyepez/xERN/issues"
+  },
+  "homepage": "https://github.com/jjyepez/xERN#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-transform-runtime": "7.5.0",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.6",
+    "css-loader": "3.1.0",
+    "nodemon": "1.19.1",
+    "style-loader": "0.23.1",
+    "webpack": "4.38.0",
+    "webpack-cli": "3.3.6"
+  },
+  "dependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/runtime": "7.5.5",
+    "chalk": "2.4.2",
+    "dotenv": "8.0.0",
+    "express": "4.17.1",
+    "morgan": "1.9.1",
+    "path": "0.12.7",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
+}
