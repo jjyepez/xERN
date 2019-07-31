@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+import {
+    Segment
+} from 'semantic-ui-react';
+
 import ContentBody from '../components/ContentBody';
 
 class Content extends Component {

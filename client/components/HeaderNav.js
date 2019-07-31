@@ -1,21 +1,51 @@
-import React, {Component} from 'react';
-
-import './css/HeaderNav.less';
-
+import React, { Component } from 'react'
 import {
-    Link
-} from 'react-router-dom';
+  Menu,
+  Segment,
+  Container,
+  Icon
+} from 'semantic-ui-react'
 
-class HeaderNav extends Component {
-    render(){
-        return (
-            <ul className="HeaderNav">
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-        )
-    }
+export default class HeaderNav extends Component {
+  state = { activeItem: 'home' }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Menu fixed="top" inverted>
+        <Container>
+            <Menu.Item as='h4' header
+              style={{
+                width: '14rem'
+              }}
+            >
+              <Icon name='cog' />
+              Your App name
+            </Menu.Item>
+
+            <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+            <Menu.Item
+              name='messages'
+              active={activeItem === 'messages'}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name='friends'
+              active={activeItem === 'friends'}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Menu position='right'>
+              <Menu.Item
+                name='logout'
+                active={activeItem === 'logout'}
+                onClick={this.handleItemClick}
+              />
+            </Menu.Menu>
+          </Container>
+      </Menu>
+    )
+  }
 }
-
-export default HeaderNav;
