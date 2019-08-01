@@ -7,41 +7,31 @@ import {
 
 import {
     Container,
-    Segment
+    Segment,
+    Grid
 } from 'semantic-ui-react';
 
 class ContentBody extends Component {
     render(){
         return (
-            <Container
-                style={{
-                    minHeight : '75vh'
-                }}
-            >
+            <Grid.Column stretched width={13}>
                 <Switch>
                     <Route
                         exact path="/"
-                        render={()=><Segment
-                            style={{
-                                top: '3.5rem'
-                            }}
+                        render={()=><div
                             {...this.props}>
                             ROUTE CONTENT
-                        </Segment>}
+                        </div>}
                     />
                     <Route
                         path="/login"
-                        render={()=><Segment
-                            style={{
-                                top: '3.5rem'
-                            }}
+                        render={()=><div
                             {...this.props}>
                             LOGIN
-                        </Segment>}
+                        </div>}
                     />
                 </Switch>
-            
-            </Container>
+            </Grid.Column>    
 
         )
     }

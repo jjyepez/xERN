@@ -1,19 +1,38 @@
 import React, {Component} from 'react';
 
+import ContentBody from '../components/ContentBody';
+import ContentSidebar from '../components/ContentSidebar';
+
 import {
-    Segment
+    Container,
+    Grid
 } from 'semantic-ui-react';
 
-import ContentBody from '../components/ContentBody';
-
 class Content extends Component {
+    
+    state = {
+        hasSidebar: true
+    }
+    
     render(){
         return (
-            <div className="Content">
-                
-                <ContentBody />
-                
-            </div>
+
+            <Container className="Content"
+                style={{
+                    paddingTop: '3.5rem',
+                    minHeight: '90vh'
+                }}
+            >
+                <Grid>
+
+                    {this.state.hasSidebar && (
+                        <ContentSidebar />
+                    )}
+
+                    <ContentBody />
+                </Grid>
+
+            </Container>
         )
     }
 }
